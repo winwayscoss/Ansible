@@ -1,0 +1,16 @@
+[web]
+web.winwayscoss.com
+
+[db]
+db.winwayscoss.com
+
+[lb]
+lb.winwayscoss.com
+
+[lamp:children]
+web
+db
+
+[stack:children]
+lamp
+lb
