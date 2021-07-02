@@ -1,0 +1,8 @@
+---
+- name: ping the host
+  hosts: web
+  tasks:
+  - name: ping test
+    ping:
+      data: pong
+        
