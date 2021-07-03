@@ -1,0 +1,9 @@
+---
+- name: Users related tasks
+  hosts: db
+  tasks: 
+    - name: User Add
+      user:
+        name: testuser
+        uid: 1600
+        state: present
