@@ -1,0 +1,22 @@
+#This playbook 
+#1.) Installs HTTPD 
+#2.) copy a index file
+#3.) Start HTTPD service
+---
+- name: Install and start HTTPD service
+  hosts: web
+  tasks:
+    - name: Install HTTPD package
+      yum:
+        name: httpd
+        state: present
+    - name: Copy index file
+      copy:
+        src: web_files/index.html
+        dest: /var/www/html/index.html
+    - name: Start HTTPD service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+      
