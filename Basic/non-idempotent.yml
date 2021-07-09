@@ -1,0 +1,8 @@
+---
+- name: Non-Idempotent example
+  hosts: web
+  tasks:
+    - name: shell example
+      shell: echo "I do not care about the existing state" > /usr/local/src/non-id.txt
+ 
+

@@ -3,20 +3,32 @@
 #2.) copy a index file
 #3.) Start HTTPD service
 ---
-- name: Install and start HTTPD service
+- name: Install and start HTTPD service   #Play1
   hosts: web
   tasks:
-    - name: Install HTTPD package
+    - name: Install HTTPD package         #Task1
       yum:
         name: httpd
         state: present
-    - name: Copy index file
+    - name: Copy index file               #Task2
       copy:
         src: web_files/index.html
         dest: /var/www/html/index.html
-    - name: Start HTTPD service
+    - name: Start HTTPD service           #Task3
       service:
         name: httpd
         state: started
         enabled: true
-      
+
+- name: Install ans start DB Service
+  hosts: db
+  tasks:
+    - name: Install Mysql
+      apt:
+        name: mysql-server-5.7
+        state: present
+    - name: Start mysql service
+      service:
+        name: mysql
+        state: started
+        enabled: true

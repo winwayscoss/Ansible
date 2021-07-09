@@ -1,0 +1,8 @@
+---
+- name: This task shows idempotent nature
+  hosts: web
+  tasks:
+    - name: Idempotent using copy module
+      copy:
+        dest: /usr/local/src/idmp.txt
+        content: "I am idempotent"
