@@ -1,0 +1,10 @@
+- name: Install and start HTTPD service   #Play1
+  hosts: site
+#  vars_files:
+#    - vars/first_var.yml
+  tasks:
+    - name: Install HTTPD package         #Task1
+      copy:
+        dest: /usr/local/src/varstest.txt
+        content: "{{ a }}"
+
