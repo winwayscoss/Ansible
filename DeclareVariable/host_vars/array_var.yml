@@ -1,0 +1,12 @@
+---
+users:
+  bjones:
+    name: bjones
+    first_name: bob
+    last_name: jones
+    home_dir: /home/bjones
+  senthil:
+    name: senthil
+    first_name: senthil
+    last_name: subramani
+    home_dir: /home/senthil

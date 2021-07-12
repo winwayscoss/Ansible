@@ -1,0 +1,15 @@
+---
+- name: Testing registered variable
+  hosts: web
+  tasks:
+    - name: Install the elinks package
+      yum:
+        name: vdo
+        state: installed
+      register: ins_result
+    - name: Copying output
+      copy:
+        content: "{{ ins_result }}"
+        dest: /usr/local/src/reg_var.txt
+
+    - debug: var=ins_result

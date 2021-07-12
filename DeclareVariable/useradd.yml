@@ -1,0 +1,11 @@
+---
+- name: User adding
+  hosts: web
+  vars_files:
+    - host_vars/array_var.yml
+  tasks:
+    - name: Adding user
+      user:
+        name: "{{ users.bjones.name }}"
+        home: "{{ users.bjones.home_dir }}"
+      

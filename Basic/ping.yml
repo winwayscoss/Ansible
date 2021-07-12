@@ -1,6 +1,6 @@
 ---
 - name: ping the host
-  hosts: web
+  hosts: web, db
   tasks:
   - name: ping test
     ping:
